@@ -1,0 +1,601 @@
+/* Général */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h2, h3 {
+    font-family: 'Bebas Neue', cursive;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #A8D5BA;
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    color: #FFFFFF;
+}
+
+h1 {
+    color: #FFFFFF;
+    font-size: 60px;
+}
+
+/* Navbar */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    z-index: 1000; /* AJOUTÉ POUR ASSURER QU'ELLE RESTE AU-DESSUS */
+}
+
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    list-style: none;
+    font-size: 1rem;
+}
+
+.nav-links li:hover {
+    text-decoration: none;
+}
+
+.logo img {
+    height: 70px;
+    width: 70px;
+    margin: 20px;
+    border-radius: 100%;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-links a:hover {
+    color: white;
+}
+
+.nav-links a::after {
+    content: ""; 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+    background-color: white;
+    width: 0;
+}
+
+.nav-links a:hover::after {
+    width: 100%; 
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+#accueil {
+    display: flex;
+    flex-direction: column; /* Pour que le texte reste au centre */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    /* Ajouts spécifiques à l'image de fond */
+    min-height: 100vh;
+    padding: 0 20px 100px 20px;
+
+    background-image: url('./image/image_mandy1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* Optionnel : assombrir légèrement pour que le texte ressorte mieux */
+    position: relative;
+}
+
+#accueil::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+}
+.text-accueil {
+    position: relative;
+    z-index: 1;
+}
+
+
+.text-accueil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+    max-width: 600px;
+}
+
+.rendezvous {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007BFF;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.rendezvous:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.photo-accueil img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 80px 20px 80px 20px;
+}
+
+/* Galerie */
+.galerie {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.galeri img {
+    height: 200px;
+    border-radius: 10px;
+}
+
+/* Responsive Navbar + Accueil */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 1rem;
+        background-color: #A8D5BA;
+        padding: 1rem;
+        border-radius: 5px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    #accueil {
+        flex-direction: column;
+    }
+
+    .text-accueil {
+        font-size: 20px;
+        margin: 100px 20px 30px;
+    }
+
+    h1 {
+        font-size: 40px;
+        width: auto;
+    }
+}
+
+.service {
+    min-height: 100vh;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    padding: 40px;
+    font-size: 3.5rem;
+    color: white;
+}
+
+h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+/* ---- Styles spécifiques pour la section Services ---- */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 1 à 4 colonnes */
+    gap: 30px;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 300px;
+    height: 350px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    z-index: 0;
+}
+
+.card * {
+    position: relative;
+    z-index: 1;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    color: #ffffff;
+}
+
+.card p {
+    color: #ffffff;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.card a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007BFF;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card a:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+.categorie-titre {
+    color: #fff;
+    font-size: 2rem;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.card p {
+    white-space: normal;
+}
+
+
+.horaire {
+    width: 100vw;
+    background: #A8D5BA;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.horaire h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.horaire-tableau {
+    max-width: 600px;
+    margin-top: -50px;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #111f3a;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.jour {
+    display: flex;
+    justify-content: space-between;
+    color: #ffffff;
+    font-size: 1.2rem;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+}
+
+.jour:last-child {
+    border-bottom: none;
+}
+
+.btn-rdv {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 20px 32px;
+    background-color: #007BFF;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+}
+
+.btn-rdv:hover {
+    background-color: #0056b3;
+}
+
+
+@media (max-width: 768px) {
+    .horaire-conteneur {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+#coupe-homme {
+    background-image: url(./image/coupe_homme.jpg);
+}
+
+#coupe-enfant {
+    background-image: url(./image/coupe_enfant.jpg);
+}
+
+#coupe-cheveux-longs {
+    background-image: url(./image/coupe_cheveux_long.jpg);
+}
+
+#coupe-cheveux-courts {
+    background-image: url(./image/coupe_cheveux_courts.jpg);
+}
+
+#coloration-cheveux-long {
+    background-image: url(./image/coloration_cheveux_longs.jpg);
+}
+
+#coloration-cheveux-courts {
+    background-image: url(./image/coloration_cheveux_court.jpg);
+}
+
+#repousse {
+    background-image: url(./image/repousse.jpg);
+}
+
+#balayage {
+    background-image: url(./image/balayage.jpg);
+}
+
+#extra-coloration {
+    background-image: url(./image/extra_coloration.jpg);
+}
+
+#extra-decoloration {
+    background-image: url(./image/extra_decoloration.jpg);
+}
+
+#toner {
+    background-image: url(./image/toner.jpg);
+}
+
+#coiffure-bal {
+    background-image: url(./image/coiffure_de_bal.jpg);
+}
+
+#masque {
+    background-image: url(./image/masque.jpg);
+}
+
+#toupet {
+    background-image: url(./image/toupet.jpg);
+}
+
+#mise-en-forme {
+    background-image: url(./image/mise_en_forme.jpg);
+}
+
+#permanente {
+    background-image: url(./image/permanante.jpg);
+}
+
+#contact {
+  background-color: #A8D5BA;
+  padding: 0;
+  text-align: center;
+  height: 105vh;
+}
+
+.contact {
+  max-width: 600px;
+  margin-top: -40px;
+  margin-bottom: auto;
+  margin-right: auto;
+  margin-left: auto;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+form label {
+  display: block;
+  margin-bottom: 20px;
+  text-align: left;
+  font-weight: bold;
+  color: #444;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+form button {
+  background-color: #007BFF;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+.footer {
+  background-color: #111f3a;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 0.95rem;
+}
+
+.footer p {
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #007BFF;
+}
+
+.pf {
+    margin: 0;
+    padding: 0;
+}
+
+/* Cacher les sommaires par défaut */
+.sommaire-section {
+  display: none;
+}
+
+/* Sur mobile (max-width: 768px), afficher les sommaires */
+@media (max-width: 768px) {
+  .sommaire-section {
+    display: block;
+    position: static;  /* Pas sticky sur mobile */
+    background-color: #111f3a;
+    padding: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    color: white;
+    box-shadow: none;
+  }
+  .sommaire-section ul {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .sommaire-section li {
+    margin-bottom: 0;
+  }
+  .sommaire-section a {
+    white-space: nowrap;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  .sommaire-section a:hover {
+    color: #007BFF;
+  }
+}
+
