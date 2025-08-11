@@ -115,7 +115,7 @@ h1 {
     min-height: 100vh;
     padding: 0 20px 100px 20px;
 
-    background-image: url('./image/image_mandy1.jpg');
+    background-image: url('image_mandy1.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -397,67 +397,67 @@ h3 {
 }
 
 #coupe-homme {
-    background-image: url(./image/coupe_homme.jpg);
+    background-image: url(coupe_homme.jpg);
 }
 
 #coupe-enfant {
-    background-image: url(./image/coupe_enfant.jpg);
+    background-imacoupe_enfant.jpg);
 }
 
 #coupe-cheveux-longs {
-    background-image: url(./image/coupe_cheveux_long.jpg);
+    background-image: url(coupe_cheveux_long.jpg);
 }
 
 #coupe-cheveux-courts {
-    background-image: url(./image/coupe_cheveux_courts.jpg);
+    background-image: url(coupe_cheveux_courts.jpg);
 }
 
 #coloration-cheveux-long {
-    background-image: url(./image/coloration_cheveux_longs.jpg);
+    background-image: url(coloration_cheveux_longs.jpg);
 }
 
 #coloration-cheveux-courts {
-    background-image: url(./image/coloration_cheveux_court.jpg);
+    background-image: url(coloration_cheveux_court.jpg);
 }
 
 #repousse {
-    background-image: url(./image/repousse.jpg);
+    background-image: url(repousse.jpg);
 }
 
 #balayage {
-    background-image: url(./image/balayage.jpg);
+    background-image: url(balayage.jpg);
 }
 
 #extra-coloration {
-    background-image: url(./image/extra_coloration.jpg);
+    background-image: url(extra_coloration.jpg);
 }
 
 #extra-decoloration {
-    background-image: url(./image/extra_decoloration.jpg);
+    background-image: url(extra_decoloration.jpg);
 }
 
 #toner {
-    background-image: url(./image/toner.jpg);
+    background-image: url(toner.jpg);
 }
 
 #coiffure-bal {
-    background-image: url(./image/coiffure_de_bal.jpg);
+    background-image: url(coiffure_de_bal.jpg);
 }
 
 #masque {
-    background-image: url(./image/masque.jpg);
+    background-image: url(masque.jpg);
 }
 
 #toupet {
-    background-image: url(./image/toupet.jpg);
+    background-image: url(toupet.jpg);
 }
 
 #mise-en-forme {
-    background-image: url(./image/mise_en_forme.jpg);
+    background-image: url(mise_en_forme.jpg);
 }
 
 #permanente {
-    background-image: url(./image/permanante.jpg);
+    background-image: url(permanante.jpg);
 }
 
 #contact {
